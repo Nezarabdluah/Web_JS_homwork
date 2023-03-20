@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+    <title>homework </title>
+    
+</head>
+    <body>
+       
+        
+         
+  <script>
+      
+      
+          console.log("              Q1               ");
+//      Q1
+      
+   
+      
+    function checkAnagram(str1,str2){
+        str1= str1.replace(/[^a-zA-Z]/g,'').toLowerCase();
+          str2= str2.replace(/[^a-zA-Z]/g,'').toLowerCase();
+        
+        
+         return  str1.split('').sort().join('') === str2.split('').sort().join('');
+        
+    }
+        
+        console.log(checkAnagram('abc','cba'));
+       console.log(checkAnagram('abc','dft'));
+      
+      
+                       console.log("            "); 
+
+      
+
+       console.log("              Q2               ");
+ //      Q2
+      
+      function sliceArray(t1,startIndex,endIndex){
+          
+          return t1.slice(startIndex , endIndex + 1);
+       
+      }
+      
+      const t1 =['moon ', 'cjk', 'red' , 'tree' ,'foor'];
+      console.log(sliceArray(t1,1,3));
+      
+      
+      
+                             console.log("            "); 
+
+       console.log("         Q3                             ");
+      
+//      Q3
+      
+      function splitStringIntoWords(str){
+          
+          return str.replace(/[^a-zA-Z]/g,'').split('');
+      }
+      
+      const str = 'Hello world tree ';
+      console.log(splitStringIntoWords(str));
+
+      
+      
+      
+                             console.log("            "); 
+
+       console.log("            Q4                                    ");
+//      Q4
+      
+      function calculateAge(dateOfBirth){
+          var currentDate=new Date();
+          var differenceInMilliseconds= currentDate - dateOfBirth ;
+          
+          var age =Math.floor(differenceInMilliseconds/(1000 * 60 * 60 * 24 * 365.25))
+           return age ;
+       }
+      
+      var dob=new Date('2002-09-01');
+      var age=calculateAge(dob);
+      console.log("this is my age :",age)
+ 
+      
+      
+                       console.log("            "); 
+
+      
+//      Q5
+       console.log("            Q5                                              ");
+      
+      
+      function isValidEmail(email){
+          
+          var emilRegex =/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emilRegex.test(email);
+      }
+      
+      var email ="nezar@example.com";
+      var isValid=isValidEmail(email);
+      console.log( "the emais is coorect ", isValid);
+      
+      
+      
+                             console.log("            "); 
+
+//      Q6
+       console.log("            Q6                                              ");
+      
+      function replaceAll(str,substr,replacement){
+          
+          return str.split(substr).join(replacement);
+      }
+      
+      let originalString="Hello,world!The world i am student .";
+      let substringToReplace="world";
+      let replacementString="people";
+
+      let newString=replaceAll(originalString,substringToReplace,replacementString);
+      
+      
+      console.log(newString); 
+
+      
+                             console.log("            "); 
+
+      
+      //      Q7
+       console.log("            Q7                                              ");
+      
+      function findSecondSmallest(arr){
+          
+          let smallest=Infinity;
+           let secondSmallest=Infinity;
+          
+          for(let i =0 ; i<arr.length; i++)
+              {
+                  if(arr[i]<smallest){
+                      secondSmallest= smallest;
+                      smallest =arr[i];
+                  }else if (arr[i]<secondSmallest && arr[i]!==smallest){
+                      secondSmallest =arr[i];
+                  }
+              }
+          return secondSmallest;
+
+      }
+      
+      let arr =[4,8,3,10,3,10];
+
+      let secondSmallest= findSecondSmallest(arr);
+      console.log( "the secend smallest number is :",secondSmallest);
+      
+      
+                             console.log("            "); 
+
+      
+            //      Q8
+       console.log("            Q8                                             ");
+      
+      
+            function arrayDifference(first, second) {
+              let difference = [];
+  
+                for (let i = 0; i < first.length; i++) {
+                if (second.indexOf(first[i]) === -1) {
+                  difference.push(first[i]);
+              }
+                  }
+  
+                   return difference;
+                     }
+ 
+ 
+                        let first = [1, 2, 3, 8, 9];
+                          let second = [3, 4, 6, 7];
+                       let difference = arrayDifference(first, second);
+
+                      console.log( "the difrerence  is :",difference); 
+      
+      
+                             console.log("            "); 
+
+                 //      Q9
+       console.log("            Q9                                              ");
+      
+      
+      
+      
+                      function formatDuration(duration) {
+  
+                          const hours = Math.floor(duration / 3600);
+   
+                          const minutes = Math.floor((duration % 3600) / 60);
+  
+                          const seconds = duration % 60;
+  
+  
+                          let formattedTime = '';
+  
+  
+                          if (hours > 0) {
+   
+                              formattedTime += hours + ' hour' + (hours > 1 ? 's' : '') + ', ';
+  
+                          }
+  
+  
+                          if (minutes > 0) {
+    
+                              formattedTime += minutes + ' minute' + (minutes > 1 ? 's' : '') + ', ';
+  
+                          }
+  
+  
+                          if (seconds > 0) {
+    
+                              formattedTime += seconds + ' second' + (seconds > 1 ? 's' : '');
+  
+                          }
+  
+ 
+                          if (formattedTime.endsWith(', ')) {
+    
+                              formattedTime = formattedTime.slice(0, -2);
+  
+                          }
+  
+   
+                          if (formattedTime.indexOf(', ') !== -1) {
+    
+       
+                              formattedTime = formattedTime.replace(/,([^,]*)$/, ', and$1');
+  
+  
+                          }
+  
+  
+   
+                          return formattedTime;
+ 
+
+                     }
+      
+      
+                 console.log(formatDuration(4000)); 
+                       console.log("            "); 
+
+                  console.log(formatDuration(590));
+                             console.log("            "); 
+
+                console.log(formatDuration(4900));
+                             console.log("            "); 
+
+      
+      
+                             console.log("            "); 
+
+                  //      Q10
+       console.log("            Q10                                              ");
+      
+       
+                   function toCamelCase(str) {
+                   const words = str.split(/[_-]/).map(w => w.charAt(0).toUpperCase() + w.slice(1));
+  
+                        return words[0].toLowerCase() + words.slice(1).join('');
+
+                   }
+
+      
+        
+                           console.log(toCamelCase('hello my name is Nezar'));  
+                           console.log(toCamelCase('my-example-string'));  
+                           console.log(toCamelCase('some  Other String'));  
+
+      
+      
+      
+      
+      
+      
+                             console.log("            "); 
+
+      
+      console.log("        The End ")
+      
+      
+      
+      
+      
+    
+    </script>  
+    
+    
+    
+    </body>
+</html>
